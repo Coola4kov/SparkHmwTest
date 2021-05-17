@@ -30,6 +30,13 @@ spec:
         }
     }
     stages {
+		stage('GitClone') {
+			steps {
+				echo 'GIT clone'
+				sh 'git clone https://github.com/Coola4kov/SparkHmwTest'
+                sh 'cd SparkHmwTest'
+			}
+		}
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -46,4 +53,5 @@ spec:
         }
     }
 }
+
 
